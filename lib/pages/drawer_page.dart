@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class DrawerPage extends StatefulWidget {
-  const DrawerPage({super.key});
+  final String textDisplay;
+  const DrawerPage({super.key, required this.textDisplay});
 
   @override
   State<DrawerPage> createState() => _DrawerPageState();
@@ -14,17 +15,16 @@ class _DrawerPageState extends State<DrawerPage> {
       width: 300.0,
       backgroundColor: Colors.white,
       child: ListView(
-        children: const <Widget>[
+        children: <Widget>[
           DrawerHeader(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               image: DecorationImage(
                   image: AssetImage(
                       "assets/images/ann-danilina-hzQ1VAEJoW4-unsplash.jpg"),
                   fit: BoxFit.cover),
             ),
-            child: Text(
-              "Vera Elona",
-              style: TextStyle(
+            child: Text(widget.textDisplay,
+              style: const TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.w900,
                   fontSize: 25,
@@ -33,39 +33,39 @@ class _DrawerPageState extends State<DrawerPage> {
           ),
           _DrawerListTile(
             icon: Icons.person_outlined,
-            title: "Vera Elona",
+            title: widget.textDisplay,
           ),
-          Divider(),
-          _DrawerListTile(
+          const Divider(),
+          const _DrawerListTile(
             icon: Icons.add,
             title: "Add Account",
           ),
-          _DrawerListTile(
+          const _DrawerListTile(
             icon: Icons.account_circle_outlined,
             title: "My Account",
           ),
-          Divider(),
-          _DrawerListTile(
+          const Divider(),
+          const _DrawerListTile(
             icon: Icons.group_add_outlined,
             title: "New Group",
           ),
-          _DrawerListTile(
+          const _DrawerListTile(
             icon: Icons.contacts_outlined,
             title: "Contacts",
           ),
-          _DrawerListTile(
+          const _DrawerListTile(
             icon: Icons.call_end_outlined,
             title: "Calls",
           ),
-          _DrawerListTile(
+          const _DrawerListTile(
             icon: Icons.bookmark_add_outlined,
             title: "Saved Messages",
           ),
-          _DrawerListTile(
+          const _DrawerListTile(
             icon: Icons.settings_outlined,
             title: "Settings",
           ),
-          Padding(
+          const Padding(
             padding: EdgeInsets.only(top: 150),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -82,12 +82,12 @@ class _DrawerPageState extends State<DrawerPage> {
               ],
             ),
           ),
-          Center(
+          const Center(
               child: Text(
-            "KERMANSHAH",
+            "WISPOTECH",
             style: TextStyle(fontWeight: FontWeight.w900),
           )),
-          SizedBox(height: 10,)
+          const SizedBox(height: 10,)
         ],
       ),
     );
