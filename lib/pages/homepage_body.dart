@@ -3,7 +3,9 @@ import 'package:flutter_application_01/pages/drawer_page.dart';
 import 'package:flutter/material.dart';
 
 class FirstPage extends StatefulWidget {
-  const FirstPage({super.key});
+final Function(String) onTextChanged;
+
+  const FirstPage({super.key, required this.onTextChanged});
   @override
   State<FirstPage> createState() => _FirstPageState();
 }
@@ -39,6 +41,7 @@ class _FirstPageState extends State<FirstPage> {
               setState(() {
                 textDisplay = textController.text;
               });
+              widget.onTextChanged(textDisplay);
               Navigator.push(
                 context,
                 MaterialPageRoute(

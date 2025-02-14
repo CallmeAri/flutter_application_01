@@ -10,6 +10,12 @@ class MyHomePageButton extends StatefulWidget {
 }
 
 class _MyHomePageButtonState extends State<MyHomePageButton> {
+  String textDisplay = "USERNAME";
+  void updateTextDisplay(String newtext) {
+    setState(() {
+      textDisplay = newtext;
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -33,9 +39,9 @@ class _MyHomePageButtonState extends State<MyHomePageButton> {
             ],
           ),
           // DRAWER
-          drawer:  const DrawerPage(textDisplay: "User Name"),
+          drawer:  DrawerPage(textDisplay: textDisplay),
           //BODY
-          body: const SafeArea(child: FirstPage())),
+          body: SafeArea(child: FirstPage(onTextChanged: updateTextDisplay))),
     );
   }
 }

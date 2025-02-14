@@ -23,7 +23,7 @@ class _DrawerPageState extends State<DrawerPage> {
                       "assets/images/ann-danilina-hzQ1VAEJoW4-unsplash.jpg"),
                   fit: BoxFit.cover),
             ),
-            child: Text(widget.textDisplay,
+            child: Text("${widget.textDisplay}",
               style: const TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.w900,
