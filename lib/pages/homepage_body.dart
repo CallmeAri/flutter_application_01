@@ -18,18 +18,18 @@ class _FirstPageState extends State<FirstPage> {
     return Column(
       children: [
         //DISPLAY TEXT
-        Padding(
-          padding: const EdgeInsets.only(top: 35),
+        const Padding(
+          padding: EdgeInsets.only(top: 35),
           child: Text(
-            "Welcome $textDisplay",
-            style: const TextStyle(fontSize: 15),
+            "This is a test from WISPOTECH",
+            style: TextStyle(fontSize: 15),
           ),
         ),
 //TEXT FIELD
         Container(
           padding: const EdgeInsets.all(30),
           child: TextField(
-            decoration: InputDecoration(helperText:"Inset your full name"),
+            decoration: const InputDecoration(helperText:"Inset your full name"),
             controller: textController,
           ),
         ),
@@ -49,7 +49,7 @@ class _FirstPageState extends State<FirstPage> {
                 ),
               );
             },
-            child: const Text("Display Text")),
+            child: const Text("Submit")),
 // Form field
         // Form(
         //     key: _formkey,

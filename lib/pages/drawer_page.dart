@@ -23,7 +23,7 @@ class _DrawerPageState extends State<DrawerPage> {
                       "assets/images/ann-danilina-hzQ1VAEJoW4-unsplash.jpg"),
                   fit: BoxFit.cover),
             ),
-            child: Text("${widget.textDisplay}",
+            child: Text(widget.textDisplay,
               style: const TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.w900,
@@ -66,7 +66,7 @@ class _DrawerPageState extends State<DrawerPage> {
             title: "Settings",
           ),
           const Padding(
-            padding: EdgeInsets.only(top: 150),
+            padding: EdgeInsets.only(top: 120),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
@@ -108,12 +108,15 @@ class _DrawerListTile extends StatefulWidget {
 class _DrawerListTileState extends State<_DrawerListTile> {
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      leading: Icon(widget.icon),
-      title: Text(widget.title),
-      onTap: () {
-        Navigator.pop(context);
-      },
+    return Padding(
+      padding: const EdgeInsets.only(left: 10),
+      child: ListTile(
+        leading: Icon(widget.icon),
+        title: Text(widget.title),
+        onTap: () {
+          Navigator.pop(context);
+        },
+      ),
     );
   }
 }
