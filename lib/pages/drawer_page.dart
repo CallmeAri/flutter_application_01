@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'upload_jira_screen.dart';
 class DrawerPage extends StatefulWidget {
   const DrawerPage({
     super.key,
@@ -169,8 +169,11 @@ class _DrawerListTileState extends State<_DrawerListTile> {
         // leading: Icon(widget.icon),
         title: Text(widget.title),
         onTap: () {
-          Navigator.pop(context);
-        },
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => UploadJiraScreen()),
+              );
+            },
       ),
     );
   }

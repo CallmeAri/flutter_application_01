@@ -18,9 +18,12 @@ class _MyHomePageButtonState extends State<MyHomePageButton> {
           backgroundColor: Colors.white,
           // APPBAR
           appBar: AppBar(
-            backgroundColor: const Color(0XFFF2F2F2),
+            backgroundColor: Colors.white,
             foregroundColor: Colors.black54,
-            title: const Text("TQN system"),
+            title: SizedBox(
+              width: 100,
+              child: Image.asset("assets/images/TQN-personnel-.png"),
+            ),
             centerTitle: true,
             actions: <Widget>[
               IconButton(
@@ -33,9 +36,10 @@ class _MyHomePageButtonState extends State<MyHomePageButton> {
             ],
           ),
           // DRAWER
-          drawer:  const DrawerPage(),
+          drawer: const DrawerPage(),
           //BODY
           body: const SafeArea(child: FirstPage())),
     );
   }
 }
+
