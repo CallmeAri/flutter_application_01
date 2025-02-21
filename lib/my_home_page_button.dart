@@ -10,12 +10,6 @@ class MyHomePageButton extends StatefulWidget {
 }
 
 class _MyHomePageButtonState extends State<MyHomePageButton> {
-  String textDisplay = "USERNAME";
-  void updateTextDisplay(String newtext) {
-    setState(() {
-      textDisplay = newtext;
-    });
-  }
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -26,7 +20,7 @@ class _MyHomePageButtonState extends State<MyHomePageButton> {
           appBar: AppBar(
             backgroundColor: const Color(0XFFF2F2F2),
             foregroundColor: Colors.black54,
-            title: const Text("Demo Application"),
+            title: const Text("TQN system"),
             centerTitle: true,
             actions: <Widget>[
               IconButton(
@@ -39,9 +33,9 @@ class _MyHomePageButtonState extends State<MyHomePageButton> {
             ],
           ),
           // DRAWER
-          drawer:  DrawerPage(textDisplay: textDisplay),
+          drawer:  const DrawerPage(),
           //BODY
-          body: SafeArea(child: FirstPage(onTextChanged: updateTextDisplay))),
+          body: const SafeArea(child: FirstPage())),
     );
   }
 }
