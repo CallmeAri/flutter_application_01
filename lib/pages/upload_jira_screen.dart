@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 
 class UploadJiraScreen extends StatefulWidget {
+  const UploadJiraScreen({super.key});
+
   @override
   _UploadJiraScreenState createState() => _UploadJiraScreenState();
 }
@@ -12,7 +14,7 @@ class _UploadJiraScreenState extends State<UploadJiraScreen> {
 
   Future<void> pickFile() async {
     FilePickerResult? result = await FilePicker.platform.pickFiles(
-      type: FileType.any, // انتخاب همه نوع فایل‌ها
+      type: FileType.any, //Choose any type of files
     );
 
     if (result != null) {
@@ -21,7 +23,7 @@ class _UploadJiraScreenState extends State<UploadJiraScreen> {
         selectedFile = file;
       });
 
-      // ذخیره فایل در حافظه محلی
+      //Save the file locally
       await saveFileLocally(file);
     }
   }
@@ -30,23 +32,23 @@ class _UploadJiraScreenState extends State<UploadJiraScreen> {
     final directory = await getApplicationDocumentsDirectory();
     final path = "${directory.path}/${file.uri.pathSegments.last}";
     await file.copy(path);
-    print("📂 File saved at: $path");
+    print(" File saved at: $path");
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("آپلود فایل JIRA")),
+      appBar: AppBar(title: Text("Upload Jira")),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           selectedFile != null
-              ? Text("📄 فایل انتخاب شده: ${selectedFile!.path}")
-              : Text("هیچ فایلی انتخاب نشده"),
+              ? Text("Selected file: ${selectedFile!.path}")
+              : Text("No file selected"),
           SizedBox(height: 20),
           ElevatedButton(
             onPressed: pickFile,
-            child: Text("انتخاب فایل"),
+            child: Text("Choose file"),
           ),
         ],
       ),
